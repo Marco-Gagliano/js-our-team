@@ -66,3 +66,45 @@ for (let i in hiringTeamMembers) {
   </div>
   `
 }
+
+
+const addMemberButton = document.getElementById("addMemberButton");
+
+addMemberButton.addEventListener("click", addMember);
+
+function addMember () {
+    const addName = document.getElementById("name").value;
+    const addRole = document.getElementById("role").value;
+    const addImg = document.getElementById("image").value;
+    
+    const addNewMember = {
+        name: addName,
+        role: addRole,
+        image: addImg,
+    }
+
+    hiringTeamMembers.push(addNewMember);
+    console.log(hiringTeamMembers);
+    
+    const addCardMember = document.querySelector(".team-container");
+    addCardMember.innerHTML += 
+    `
+    <div class="team-card">
+                                                                                                
+      <div class="card-image">
+        <img
+          src="${addImg}"
+          alt=""
+        />
+      </div>
+
+      <div class="card-text">
+        <h3>"${addName}"</h3>
+        <p>"${addRole}"</p>
+      </div>
+
+    </div>
+    `
+
+
+}
