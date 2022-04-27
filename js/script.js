@@ -7,41 +7,62 @@ Utilizzare gli input presenti nella pagina per permettere all’utente di aggiun
 */
 
 
-const teamMembers = [
+const hiringTeamMembers = [
   {
   memberName: "Angela Caroll",
   professionRole: "Chief Editor",
-  memberImg: "angela-caroll-chief-editor.jpg",
+  memberImg: "img/angela-caroll-chief-editor.jpg",
   },
 
   {
   memberName: "Angela Lopez",
   professionRole: "Social Media Manager",
-  memberImg: "angela-lopez-social-media-manager.jpg",
+  memberImg: "img/angela-lopez-social-media-manager.jpg",
   },
 
   {
   memberName: "Barbara Ramos",
   professionRole: "Graphic Designer",
-  memberImg: "barbara-ramos-graphic-designer.jpg",
+  memberImg: "img/barbara-ramos-graphic-designer.jpg",
   },
 
   {
   memberName: "Scott Estrada",
   professionRole: "Developer",
-  memberImg: "scott-estrada-developer.jpg",
+  memberImg: "img/scott-estrada-developer.jpg",
   },
 
   {
   memberName: "Walter Gordon",
   professionRole: "Office Manager",
-  memberImg: "walter-gordon-office-manager.jpg",
+  memberImg: "img/walter-gordon-office-manager.jpg",
   },
 
   {
   memberName: "Wayne Bernett",
   professionRole: "Founder CEO",
-  memberImg: "wayne-barnett-founder-ceo.jpg",
+  memberImg: "img/wayne-barnett-founder-ceo.jpg",
   },
-
 ]
+
+for (let i in hiringTeamMembers) {
+  let cardMember = document.querySelector (".team-container");
+  cardMember.innerHTML +=
+  `
+  <div class="team-card">
+
+    <div class="card-image">
+      <img
+        src="${hiringTeamMembers[i].memberImg}"
+        alt="${hiringTeamMembers[i].memberName}"
+      />
+    </div>
+
+    <div class="card-text">
+      <h3>${hiringTeamMembers[i].memberName}</h3>
+      <p>${hiringTeamMembers[i].professionRole}</p>
+    </div>
+
+  </div>
+  `
+}
